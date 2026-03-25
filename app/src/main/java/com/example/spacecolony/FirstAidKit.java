@@ -8,6 +8,5 @@ public class FirstAidKit extends Item {
     }
     public void used (CrewMember cm) {
         cm.heal(this.hpRestore);
-
     }
 }

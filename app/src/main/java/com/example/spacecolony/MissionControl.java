@@ -31,5 +31,8 @@ public class MissionControl {
         else if (action.equals("use")) {
             cm.use(item);
         }
+        else if (action.equals("nothing")) {
+            cm.changeEnergy(1);
+        }
     }
 }
