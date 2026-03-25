@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SpaceColony" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="materialButtonStyle">@style/MyButtonStyle</item>
+        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+    </style>
+    <style name="Theme.SpaceColony" parent="Base.Theme.SpaceColony" />
+</resources>
