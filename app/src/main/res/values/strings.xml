@@ -1,3 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Space Colony</string>
+
+    <!-- HUD -->
+    <string name="hud_turn_format">Turn %1$d</string>
+    <string name="hud_threat_format">Next threat in %1$d</string>
+    <string name="hud_threat_imminent">Threat imminent!</string>
+    <string name="hud_credits_format">%1$s ¢</string>
+    <string name="hud_settings">Settings</string>
+
+    <!-- Alert banners -->
+    <string name="alert_stable_title">Colony stable</string>
+    <string name="alert_stable_body">No threats detected. Good time to mine or train.</string>
+    <string name="alert_warning_title">Threat approaching</string>
+    <string name="alert_warning_body">Alien sighted. Assign a squad before end of turn.</string>
+    <string name="alert_danger_title">Alien invasion!</string>
+    <string name="alert_danger_body">Send a squad immediately.</string>
+
+    <!-- Nav -->
+    <string name="nav_colony">Colony</string>
+    <string name="nav_crew">Crew</string>
+    <string name="nav_economy">Economy</string>
+    <string name="nav_mission">Mission</string>
+    <string name="nav_stats">Stats</string>
+
+    <!-- Crew roles -->
+    <string name="role_medic">Medic</string>
+    <string name="role_builder">Builder</string>
+    <string name="role_miner">Miner</string>
+    <string name="role_soldier">Soldier</string>
+    <string name="role_special_soldier">Special Soldier</string>
+
+    <!-- Crew status -->
+    <string name="status_quarters">Quarters</string>
+    <string name="status_hospital">Hospital</string>
+    <string name="status_on_mission">On Mission</string>
+    <string name="status_training">Training</string>
+
+    <!-- Crew screen -->
+    <string name="crew_hp_format">HP: %1$d / %2$d</string>
+    <string name="crew_energy_format">Energy: %1$d / %2$d</string>
+    <string name="crew_hire_title">Hire crew member</string>
+    <string name="crew_hire_button">Hire  ¢%1$s</string>
+    <string name="crew_combat_warning">Not recommended for combat</string>
+    <string name="crew_assign_building">Assign to building</string>
+    <string name="btn_hire_crew">+  Hire</string>
+
+    <!-- Colony / buildings -->
+    <string name="building_hospital">Hospital</string>
+    <string name="building_simulator">Simulator</string>
+    <string name="building_quarters">Quarters</string>
+    <string name="building_capacity_format">%1$d / %2$d capacity</string>
+    <string name="building_upgrade">Upgrade building</string>
+    <string name="building_upgrade_progress_format">Upgrading… %1$d%%</string>
+
+    <!-- Economy -->
+    <string name="economy_mining_title">Mining operations</string>
+    <string name="economy_shop_title">Shop</string>
+    <string name="economy_inflation_format">Inflation ×%1$.1f</string>
+    <string name="miner_last_payout_format">Last payout: ¢%1$s</string>
+    <string name="miner_send">Send to mine</string>
+    <string name="miner_mining">Mining…</string>
+    <string name="shop_buy_format">Buy  ¢%1$s</string>
+    <string name="shop_spaceship">Spaceship</string>
+    <string name="shop_potion">Energy Potion</string>
+    <string name="shop_first_aid">First Aid Kit</string>
+    <string name="asteroid_unlocked">Asteroid mining unlocked</string>
+    <string name="asteroid_locked">No spaceship</string>
+
+    <!-- Mission / Battle -->
+    <string name="mission_squad_title">Select your squad</string>
+    <string name="mission_threat_level_format">Threat level %1$d</string>
+    <string name="mission_launch">Launch mission</string>
+    <string name="mission_squad_hint">Choose 1–3 crew members</string>
+    <string name="battle_action_attack">Attack</string>
+    <string name="battle_action_rest">Rest (+1 energy)</string>
+    <string name="battle_action_use_items">Use items</string>
+    <string name="battle_action_potion">Use Potion</string>
+    <string name="battle_action_first_aid">Use First Aid</string>
+    <string name="battle_crit_chance_format">Crit: %1$d%%</string>
+
+    <!-- Post-mission -->
+    <string name="result_victory">Victory</string>
+    <string name="result_defeat">Defeat</string>
+    <string name="result_credits_earned_format">+¢%1$s earned</string>
+    <string name="result_credits_lost_format">−¢%1$s lost</string>
+    <string name="result_turns_format">Turns fought: %1$d</string>
+    <string name="result_crits_format">Critical hits: %1$d</string>
+    <string name="result_damage_format">Total damage dealt: %1$d</string>
+    <string name="result_return">Return to colony</string>
+    <string name="result_fallen_header">Fallen crew</string>
+
+    <!-- Stats -->
+    <string name="stats_missions_completed">Missions completed</string>
+    <string name="stats_win_loss">Win / loss ratio</string>
+    <string name="stats_credits_total">Total credits earned</string>
+    <string name="stats_highest_threat">Highest threat defeated</string>
+    <string name="stats_top_crew">Most used crew member</string>
+    <string name="stats_earnings_chart">Earnings per turn</string>
+
+    <!-- Save / Load -->
+    <string name="save_load_title">Save &amp; Load</string>
+    <string name="save_game">Save game</string>
+    <string name="load_game">Load game</string>
+    <string name="last_save_format">Last saved: %1$s</string>
+    <string name="no_save_found">No save found</string>
 </resources>

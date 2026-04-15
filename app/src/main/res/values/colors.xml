@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Backgrounds -->
+    <color name="bg_primary">#0D1117</color>
+    <color name="bg_surface">#111827</color>
+    <color name="bg_card">#1A2233</color>
+    <color name="bg_elevated">#1F2937</color>
+
+    <!-- Primary action: teal -->
+    <color name="teal_400">#1D9E75</color>
+    <color name="teal_300">#5DCAA5</color>
+    <color name="teal_200">#9FE1CB</color>
+    <color name="teal_900">#04342C</color>
+
+    <!-- Economy / credits: amber -->
+    <color name="amber_400">#EF9F27</color>
+    <color name="amber_300">#FAC775</color>
+    <color name="amber_900">#412402</color>
+
+    <!-- Danger / threats: coral-red -->
+    <color name="coral_400">#D85A30</color>
+    <color name="coral_300">#F0997B</color>
+    <color name="red_400">#E24B4A</color>
+    <color name="red_900">#501313</color>
+
+    <!-- Warning -->
+    <color name="warning_400">#EF9F27</color>
+    <color name="warning_900">#412402</color>
+
+    <!-- Inactive / neutral -->
+    <color name="gray_600">#5F5E5A</color>
+    <color name="gray_400">#888780</color>
+    <color name="gray_200">#B4B2A9</color>
+    <color name="gray_100">#D3D1C7</color>
+
+    <!-- Text -->
+    <color name="text_primary">#E2E8F0</color>
+    <color name="text_secondary">#9CA3AF</color>
+    <color name="text_hint">#5F5E5A</color>
+
+    <!-- Borders -->
+    <color name="border_default">#1F2937</color>
+    <color name="border_muted">#374151</color>
+
+    <!-- Crew role colors -->
+    <color name="role_medic">#1D9E75</color>
+    <color name="role_builder">#888780</color>
+    <color name="role_miner">#EF9F27</color>
+    <color name="role_soldier">#1D9E75</color>
+    <color name="role_special_soldier">#D85A30</color>
+
+    <!-- HP / Energy bars -->
+    <color name="bar_hp">#E24B4A</color>
+    <color name="bar_energy">#378ADD</color>
+    <color name="bar_track">#1F2937</color>
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
 </resources>

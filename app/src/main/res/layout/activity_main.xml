@@ -1,19 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/bg_primary">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- top HUD bar -->
+    <LinearLayout
+        android:id="@+id/layout_hud_top"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:background="@color/bg_surface"
+        android:elevation="4dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Row 1: colony name + settings -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp"
+            android:gravity="center_vertical">
+
+            <View
+                android:id="@+id/view_status_dot"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/bg_status_dot_green" />
+
+            <TextView
+                android:id="@+id/tv_colony_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="Nova Kepler IV"
+                android:textColor="@color/teal_300"
+                android:textSize="@dimen/text_sm"
+                android:letterSpacing="0.08"
+                android:fontFamily="@font/exo2_medium" />
+
+            <ImageButton
+                android:id="@+id/btn_settings"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_settings"
+                android:tint="@color/gray_400"
+                android:contentDescription="@string/hud_settings" />
+        </LinearLayout>
+
+        <!-- Row 2: turn, credits, inflation stats -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:divider="@drawable/divider_vertical"
+            android:showDividers="middle">
+
+            <!-- Turn counter -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Turn"
+                    style="@style/TextSectionHeader" />
+
+                <TextView
+                    android:id="@+id/tv_turn_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:textColor="@color/teal_300"
+                    android:textSize="@dimen/text_xl"
+                    android:fontFamily="@font/exo2_medium" />
+
+                <TextView
+                    android:id="@+id/tv_turn_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="of mission 3"
+                    android:textColor="@color/text_hint"
+                    android:textSize="@dimen/text_xs" />
+            </LinearLayout>
+
+            <!-- Credits -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Credits"
+                    style="@style/TextSectionHeader" />
+
+                <TextView
+                    android:id="@+id/tv_credits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4,820 ¢"
+                    android:textColor="@color/amber_400"
+                    android:textSize="@dimen/text_xl"
+                    android:fontFamily="@font/exo2_medium" />
+
+                <TextView
+                    android:id="@+id/tv_credits_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+340 last turn"
+                    android:textColor="@color/text_hint"
+                    android:textSize="@dimen/text_xs" />
+            </LinearLayout>
+
+            <!-- Inflation -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inflation"
+                    style="@style/TextSectionHeader" />
+
+                <TextView
+                    android:id="@+id/tv_inflation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.3×"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_xl"
+                    android:fontFamily="@font/exo2_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="price scale"
+                    android:textColor="@color/text_hint"
+                    android:textSize="@dimen/text_xs" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 3: threat progress bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:gravity="center_vertical"
+            app:gap="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next threat"
+                android:textColor="@color/gray_400"
+                android:textSize="@dimen/text_xs" />
+
+            <ProgressBar
+                android:id="@+id/progress_threat"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/threat_bar_height"
+                android:layout_weight="1"
+                android:progressDrawable="@drawable/progress_threat"
+                android:max="5"
+                android:progress="2" />
+
+            <TextView
+                android:id="@+id/tv_threat_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 turns"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_sm"
+                android:fontFamily="@font/exo2_medium"
+                android:minWidth="48dp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Row 4: alert banner (visibility toggled in code) -->
+        <LinearLayout
+            android:id="@+id/layout_alert_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="10dp"
+            app:gap="8dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_alert_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_check_circle"
+                android:tint="@color/teal_300" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_alert_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alert_stable_title"
+                    android:textColor="@color/teal_300"
+                    android:textSize="@dimen/text_sm"
+                    android:fontFamily="@font/exo2_medium" />
+
+                <TextView
+                    android:id="@+id/tv_alert_body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alert_stable_body"
+                    android:textColor="@color/teal_200"
+                    android:textSize="@dimen/text_xs" />
+            </LinearLayout>
+        <!-- No Row 6 or 7 -->
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- Fragment container -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!-- Bottom navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:layout_gravity="bottom"
+        android:background="@color/bg_surface"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_nav"
+        app:elevation="8dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,10 +1,105 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.SpaceColony" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowBackground">@android:color/black</item>
-        <item name="android:colorBackground">@android:color/black</item>
-        <item name="materialButtonStyle">@style/MyButtonStyle</item>
-        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.SpaceColony" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:statusBarColor">@color/bg_surface</item>
+        <item name="android:navigationBarColor">@color/bg_surface</item>
+        <item name="colorPrimary">@color/teal_400</item>
+        <item name="colorPrimaryVariant">@color/teal_900</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="colorSurface">@color/bg_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+        <item name="bottomSheetDialogTheme">@style/BottomSheetTheme</item>
     </style>
-    <style name="Theme.SpaceColony" parent="Base.Theme.SpaceColony" />
+
+    <style name="BottomSheetTheme" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <!-- Card style used throughout -->
+    <style name="CardStyle">
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <!-- Section header label -->
+    <style name="TextSectionHeader">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">@color/text_hint</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Primary value (credits, turn number) -->
+    <style name="TextValueLarge">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/exo2_medium</item>
+    </style>
+
+    <!-- Role badge pill -->
+    <style name="RoleBadge">
+        <item name="android:textSize">10sp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:background">@drawable/bg_role_badge</item>
+    </style>
+
+    <!-- Nav item label -->
+    <style name="TextNavLabel">
+        <item name="android:textSize">9sp</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+    </style>
+
+    <!-- Primary action button -->
+    <style name="ButtonPrimary" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:textColor">@color/bg_primary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/exo2_medium</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- Secondary/ghost button -->
+    <style name="ButtonSecondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/teal_300</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/exo2_medium</item>
+        <item name="strokeColor">@color/teal_400</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- Danger button -->
+    <style name="ButtonDanger" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/bg_button_danger</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/exo2_medium</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
+    </style>
+
 </resources>
