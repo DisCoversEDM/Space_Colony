@@ -15,6 +15,11 @@ public class Simulator extends Building{
         }
         return instance;
     }
+
+    public static void reset() {
+        instance = null;
+    }
+
     public void decreaseEnergyCost () {
         if (this.energyCost > 1) {
             this.energyCost--;

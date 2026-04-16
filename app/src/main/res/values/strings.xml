@@ -8,6 +8,7 @@
     <string name="hud_threat_imminent">Threat imminent!</string>
     <string name="hud_credits_format">%1$s ¢</string>
     <string name="hud_settings">Settings</string>
+    <string name="btn_next_turn">Next Turn</string>
 
     <!-- Alert banners -->
     <string name="alert_stable_title">Colony stable</string>
@@ -40,19 +41,35 @@
     <!-- Crew screen -->
     <string name="crew_hp_format">HP: %1$d / %2$d</string>
     <string name="crew_energy_format">Energy: %1$d / %2$d</string>
+    <string name="crew_xp_format">XP: %1$d</string>
     <string name="crew_hire_title">Hire crew member</string>
     <string name="crew_hire_button">Hire  ¢%1$s</string>
     <string name="crew_combat_warning">Not recommended for combat</string>
     <string name="crew_assign_building">Assign to building</string>
-    <string name="btn_hire_crew">+  Hire</string>
+    <string name="btn_hire_crew">Hire</string>
+
+    <!-- Hire descriptions -->
+    <string name="desc_soldier">Strong in combat. High HP and damage.</string>
+    <string name="desc_medic">Heals others in the Hospital. Low combat stats.</string>
+    <string name="desc_miner">Extracts resources from asteroids and land.</string>
+    <string name="desc_builder">Upgrades buildings to improve efficiency.</string>
+    <string name="desc_special_soldier">Elite combatant with a chance to deal critical damage.</string>
+    <string name="hire_success">Hired %1$s!</string>
+    <string name="not_enough_credits">Not enough credits!</string>
+    <string name="stat_hp_short">HP %1$d</string>
+    <string name="stat_energy_short">EN %1$d</string>
+    <string name="price_format">¢ %1$d</string>
 
     <!-- Colony / buildings -->
     <string name="building_hospital">Hospital</string>
     <string name="building_simulator">Simulator</string>
     <string name="building_quarters">Quarters</string>
-    <string name="building_capacity_format">%1$d / %2$d capacity</string>
+    <string name="building_capacity_format">%1$d / %2$d</string>
+    <string name="building_capacity_label_format">%1$d / %2$d capacity</string>
     <string name="building_upgrade">Upgrade building</string>
     <string name="building_upgrade_progress_format">Upgrading… %1$d%%</string>
+    <string name="quarters_label">Rest Area</string>
+    <string name="quarters_info">Quarters - Rest here to restore energy for free.</string>
 
     <!-- Economy -->
     <string name="economy_mining_title">Mining operations</string>
@@ -60,7 +77,10 @@
     <string name="economy_inflation_format">Inflation ×%1$.1f</string>
     <string name="miner_last_payout_format">Last payout: ¢%1$s</string>
     <string name="miner_send">Send to mine</string>
+    <string name="miner_mine_land">Start Land</string>
+    <string name="miner_mine_asteroid">Start Asteroid</string>
     <string name="miner_mining">Mining…</string>
+    <string name="miner_stop">Stop Mining</string>
     <string name="shop_buy_format">Buy  ¢%1$s</string>
     <string name="shop_spaceship">Spaceship</string>
     <string name="shop_potion">Energy Potion</string>
@@ -97,7 +117,11 @@
     <string name="stats_credits_total">Total credits earned</string>
     <string name="stats_highest_threat">Highest threat defeated</string>
     <string name="stats_top_crew">Most used crew member</string>
-    <string name="stats_earnings_chart">Earnings per turn</string>
+    <string name="stats_win_loss_format">%1$d / %2$d</string>
+    <string name="stats_credits_format">¢ %1$s</string>
+    <string name="stats_threat_format">Level %1$d</string>
+    <string name="stats_top_crew_format">%1$s  ·  %2$s  ·  %3$d missions</string>
+    <string name="stats_no_missions">No missions yet</string>
 
     <!-- Save / Load -->
     <string name="save_load_title">Save &amp; Load</string>
@@ -105,4 +129,5 @@
     <string name="load_game">Load game</string>
     <string name="last_save_format">Last saved: %1$s</string>
     <string name="no_save_found">No save found</string>
+    <string name="new_game">New game</string>
 </resources>

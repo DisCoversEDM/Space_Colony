@@ -24,6 +24,7 @@ public abstract class CrewMember {
         this.healthPoints = maxHP;
         this.maxHP = maxHP;
         this.id = idCounter;
+        this.alive = true; // Initialize as alive
         idCounter++;
     }
 
@@ -39,6 +40,8 @@ public abstract class CrewMember {
         }
         if (this.healthPoints <= 0) {
             this.alive = false;
+            this.healthPoints = 0;
+            GameManager.getInstance().handleCrewDeath(this);
         }
     }
     public void changeEnergy (int points) {
@@ -71,6 +74,9 @@ public abstract class CrewMember {
     }
     public static int getNumberOfCreated () {
         return idCounter;
+    }
+    public static void setIdCounter(int value) {
+        idCounter = value;
     }
     public int getPrice () {
         return this.price;

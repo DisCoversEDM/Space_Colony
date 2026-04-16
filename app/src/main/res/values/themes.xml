@@ -7,7 +7,7 @@
         <item name="android:navigationBarColor">@color/bg_surface</item>
         <item name="colorPrimary">@color/teal_400</item>
         <item name="colorPrimaryVariant">@color/teal_900</item>
-        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="colorOnPrimary">@android:color/white</item>
         <item name="colorSurface">@color/bg_surface</item>
         <item name="colorOnSurface">@color/text_primary</item>
         <item name="android:fontFamily">@font/exo2_regular</item>
@@ -31,7 +31,7 @@
 
     <!-- Section header label -->
     <style name="TextSectionHeader">
-        <item name="android:textSize">9sp</item>
+        <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/text_hint</item>
         <item name="android:letterSpacing">0.12</item>
         <item name="android:fontFamily">@font/exo2_regular</item>
@@ -65,13 +65,14 @@
     <!-- Primary action button -->
     <style name="ButtonPrimary" parent="Widget.MaterialComponents.Button">
         <item name="android:background">@drawable/bg_button_primary</item>
-        <item name="android:textColor">@color/bg_primary</item>
-        <item name="android:textSize">13sp</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/exo2_medium</item>
-        <item name="android:paddingStart">16dp</item>
-        <item name="android:paddingEnd">16dp</item>
-        <item name="android:paddingTop">10dp</item>
-        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
         <item name="cornerRadius">8dp</item>
         <item name="android:stateListAnimator">@null</item>
         <item name="elevation">0dp</item>
@@ -80,13 +81,13 @@
     <!-- Secondary/ghost button -->
     <style name="ButtonSecondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textColor">@color/teal_300</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/exo2_medium</item>
         <item name="strokeColor">@color/teal_400</item>
         <item name="strokeWidth">1dp</item>
         <item name="cornerRadius">8dp</item>
-        <item name="android:paddingStart">16dp</item>
-        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
         <item name="android:stateListAnimator">@null</item>
         <item name="elevation">0dp</item>
     </style>
@@ -94,8 +95,9 @@
     <!-- Danger button -->
     <style name="ButtonDanger" parent="Widget.MaterialComponents.Button">
         <item name="android:background">@drawable/bg_button_danger</item>
-        <item name="android:textColor">@color/text_primary</item>
-        <item name="android:textSize">13sp</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/exo2_medium</item>
         <item name="cornerRadius">8dp</item>
         <item name="android:stateListAnimator">@null</item>

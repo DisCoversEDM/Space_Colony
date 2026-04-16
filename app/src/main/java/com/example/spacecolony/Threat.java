@@ -34,4 +34,7 @@ public class Threat {
     public boolean isAlive () {
         return this.alive;
     }
+    public int getHealthPoints() {
+        return this.healthPoints;
+    }
 }

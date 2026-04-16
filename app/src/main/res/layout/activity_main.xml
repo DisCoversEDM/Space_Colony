@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<RelativeLayout
     android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/bg_surface"
-        android:elevation="4dp">
+        android:elevation="4dp"
+        android:layout_alignParentTop="true">
 
         <!-- Row 1: colony name + settings -->
         <LinearLayout
@@ -50,6 +51,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_settings"
                 android:tint="@color/gray_400"
+                android:layout_marginStart="8dp"
                 android:contentDescription="@string/hud_settings" />
         </LinearLayout>
 
@@ -82,7 +84,7 @@
                     android:id="@+id/tv_turn_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12"
+                    android:text="1"
                     android:textColor="@color/teal_300"
                     android:textSize="@dimen/text_xl"
                     android:fontFamily="@font/exo2_medium" />
@@ -91,7 +93,7 @@
                     android:id="@+id/tv_turn_sub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="of mission 3"
+                    android:text="of mission"
                     android:textColor="@color/text_hint"
                     android:textSize="@dimen/text_xs" />
             </LinearLayout>
@@ -117,7 +119,7 @@
                     android:id="@+id/tv_credits"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4,820 ¢"
+                    android:text="500 ¢"
                     android:textColor="@color/amber_400"
                     android:textSize="@dimen/text_xl"
                     android:fontFamily="@font/exo2_medium" />
@@ -126,7 +128,7 @@
                     android:id="@+id/tv_credits_sub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+340 last turn"
+                    android:text="starting budget"
                     android:textColor="@color/text_hint"
                     android:textSize="@dimen/text_xs" />
             </LinearLayout>
@@ -152,7 +154,7 @@
                     android:id="@+id/tv_inflation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1.3×"
+                    android:text="1.0×"
                     android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_xl"
                     android:fontFamily="@font/exo2_medium" />
@@ -175,8 +177,7 @@
             android:paddingEnd="14dp"
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
-            android:gravity="center_vertical"
-            app:gap="8dp">
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -193,13 +194,15 @@
                 android:layout_weight="1"
                 android:progressDrawable="@drawable/progress_threat"
                 android:max="5"
-                android:progress="2" />
+                android:progress="0"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tv_threat_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3 turns"
+                android:text="5 turns"
                 android:textColor="@color/text_primary"
                 android:textSize="@dimen/text_sm"
                 android:fontFamily="@font/exo2_medium"
@@ -218,7 +221,6 @@
             android:paddingEnd="12dp"
             android:paddingTop="8dp"
             android:paddingBottom="10dp"
-            app:gap="8dp"
             android:visibility="gone">
 
             <ImageView
@@ -226,7 +228,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_check_circle"
-                android:tint="@color/teal_300" />
+                android:tint="@color/teal_300"
+                android:layout_marginEnd="8dp"/>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -251,25 +254,16 @@
                     android:textColor="@color/teal_200"
                     android:textSize="@dimen/text_xs" />
             </LinearLayout>
-        <!-- No Row 6 or 7 -->
         </LinearLayout>
 
-
     </LinearLayout>
-
-    <!-- Fragment container -->
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <!-- Bottom navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="@dimen/nav_height"
-        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
         android:background="@color/bg_surface"
         app:itemIconTint="@color/nav_item_color"
         app:itemTextColor="@color/nav_item_color"
@@ -277,4 +271,24 @@
         app:menu="@menu/menu_bottom_nav"
         app:elevation="8dp" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/btn_next_turn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_nav"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/btn_next_turn"
+        style="@style/ButtonPrimary" />
+
+    <!-- Fragment container -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_hud_top"
+        android:layout_above="@id/btn_next_turn"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</RelativeLayout>

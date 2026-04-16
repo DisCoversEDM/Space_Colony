@@ -12,6 +12,9 @@
     <color name="teal_200">#9FE1CB</color>
     <color name="teal_900">#04342C</color>
 
+    <!-- Blue -->
+    <color name="blue_400">#378ADD</color>
+
     <!-- Economy / credits: amber -->
     <color name="amber_400">#EF9F27</color>
     <color name="amber_300">#FAC775</color>
