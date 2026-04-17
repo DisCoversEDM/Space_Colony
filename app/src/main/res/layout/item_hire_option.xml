@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_hire_option.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="@color/bg_elevated"
+    app:cardCornerRadius="@dimen/corner_md"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/border_default"
+    app:strokeWidth="0.5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        app:gap="12dp">
+
+        <!-- Role color strip -->
+        <View
+            android:id="@+id/view_role_strip"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:minHeight="48dp"
+            android:background="@color/teal_400" />
+
+        <!-- Name + description -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_hire_role_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Soldier"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_body"
+                android:fontFamily="@font/exo2_medium" />
+
+            <TextView
+                android:id="@+id/tv_hire_role_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strong in combat. Recommended for missions."
+                android:textColor="@color/text_hint"
+                android:textSize="@dimen/text_xs"
+                android:layout_marginTop="2dp" />
+
+            <!-- Quick stat chips -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:gap="6dp"
+                android:layout_marginTop="6dp">
+
+                <TextView
+                    android:id="@+id/tv_hire_stat_hp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HP 100"
+                    android:textColor="@color/bar_hp"
+                    android:textSize="@dimen/text_xs"
+                    android:background="@drawable/bg_role_badge"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp" />
+
+                <TextView
+                    android:id="@+id/tv_hire_stat_energy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EN 100"
+                    android:textColor="@color/bar_energy"
+                    android:textSize="@dimen/text_xs"
+                    android:background="@drawable/bg_role_badge"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Price + hire button -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            app:gap="6dp">
+
+            <TextView
+                android:id="@+id/tv_hire_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¢ 500"
+                android:textColor="@color/amber_400"
+                android:textSize="@dimen/text_body"
+                android:fontFamily="@font/exo2_medium"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/btn_hire"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:text="Hire"
+                android:textSize="@dimen/text_xs"
+                style="@style/ButtonPrimary"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+        </LinearLayout>
+        <!-- delectable -->
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">24dp</dimen>
+
+    <!-- Corner radii -->
+    <dimen name="corner_sm">6dp</dimen>
+    <dimen name="corner_md">8dp</dimen>
+    <dimen name="corner_lg">12dp</dimen>
+    <dimen name="corner_pill">50dp</dimen>
+
+    <!-- HUD -->
+    <dimen name="hud_height">56dp</dimen>
+    <dimen name="nav_height">60dp</dimen>
+    <dimen name="threat_bar_height">4dp</dimen>
+
+    <!-- Cards -->
+    <dimen name="card_padding">12dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
+
+    <!-- Crew card -->
+    <dimen name="crew_card_min_height">96dp</dimen>
+    <dimen name="stat_bar_height">5dp</dimen>
+
+    <!-- Colony map -->
+    <dimen name="building_icon_size">64dp</dimen>
+    <dimen name="building_icon_tap_target">80dp</dimen>
+
+    <!-- Battle -->
+    <dimen name="battle_hp_bar_height">8dp</dimen>
+    <dimen name="action_button_height">56dp</dimen>
+    <dimen name="damage_float_text_size">18sp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_xs">9sp</dimen>
+    <dimen name="text_sm">11sp</dimen>
+    <dimen name="text_body">13sp</dimen>
+    <dimen name="text_md">15sp</dimen>
+    <dimen name="text_lg">18sp</dimen>
+    <dimen name="text_xl">22sp</dimen>
+    <dimen name="text_display">28sp</dimen>
+</resources>

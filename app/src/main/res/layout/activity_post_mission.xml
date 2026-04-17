@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_post_mission.xml -->
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:padding="16dp"
+    android:clipToPadding="false"
+    android:paddingBottom="32dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:gap="14dp">
+
+        <!-- Outcome banner (Victory or Defeat) -->
+        <LinearLayout
+            android:id="@+id/layout_outcome_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp"
+            android:background="@drawable/bg_card">
+
+            <TextView
+                android:id="@+id/tv_outcome_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Victory"
+                android:textColor="@color/teal_300"
+                android:textSize="@dimen/text_display"
+                android:fontFamily="@font/exo2_medium"
+                android:letterSpacing="0.05" />
+
+            <!-- Credits earned / lost -->
+            <TextView
+                android:id="@+id/tv_outcome_credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+¢ 480 earned"
+                android:textColor="@color/amber_400"
+                android:textSize="@dimen/text_lg"
+                android:fontFamily="@font/exo2_medium"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+        <!-- Battle summary card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="@dimen/corner_lg"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/border_default"
+            app:strokeWidth="0.5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:gap="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Battle summary"
+                    style="@style/TextSectionHeader" />
+
+                <!-- Turns fought -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/result_turns_format"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_body" />
+
+                    <TextView
+                        android:id="@+id/tv_result_turns"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_body"
+                        android:fontFamily="@font/exo2_medium" />
+                </LinearLayout>
+
+                <!-- Critical hits -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/result_crits_format"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_body" />
+
+                    <TextView
+                        android:id="@+id/tv_result_crits"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textColor="@color/coral_300"
+                        android:textSize="@dimen/text_body"
+                        android:fontFamily="@font/exo2_medium" />
+                </LinearLayout>
+
+                <!-- Total damage -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/result_damage_format"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_body" />
+
+                    <TextView
+                        android:id="@+id/tv_result_damage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="412"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_body"
+                        android:fontFamily="@font/exo2_medium" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fallen crew section (GONE on victory with no deaths) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layout_fallen_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/red_900"
+            app:cardCornerRadius="@dimen/corner_lg"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/red_400"
+            app:strokeWidth="0.5dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:gap="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/result_fallen_header"
+                    style="@style/TextSectionHeader"
+                    android:textColor="@color/coral_300" />
+
+                <!-- Fallen crew names added (made it random) -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_fallen_crew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Crew xp / status updates (added as small chips bruv) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_crew_updates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+
+        <!-- Return to colony button -->
+        <Button
+            android:id="@+id/btn_return_colony"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_button_height"
+            android:layout_marginTop="8dp"
+            android:text="@string/result_return"
+            style="@style/ButtonPrimary" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

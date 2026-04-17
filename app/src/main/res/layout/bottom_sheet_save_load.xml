@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- bottom_sheet_save_load.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="40dp">
+
+    <!-- Drag handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@color/border_muted" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_load_title"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_md"
+        android:fontFamily="@font/exo2_medium"
+        android:layout_marginBottom="6dp" />
+
+    <!-- Last save timestamp -->
+    <TextView
+        android:id="@+id/tv_last_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_save_found"
+        android:textColor="@color/text_hint"
+        android:textSize="@dimen/text_xs"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Save button -->
+    <Button
+        android:id="@+id/btn_save_game"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_button_height"
+        android:text="@string/save_game"
+        style="@style/ButtonPrimary"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Load button -->
+    <Button
+        android:id="@+id/btn_load_game"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_button_height"
+        android:text="@string/load_game"
+        style="@style/ButtonSecondary"
+        android:layout_marginBottom="10dp" />
+
+    <!-- New Game button -->
+    <Button
+        android:id="@+id/btn_new_game"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_button_height"
+        android:text="@string/new_game"
+        style="@style/ButtonSecondary" />
+
+</LinearLayout>

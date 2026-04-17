@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- bottom_sheet_crew_detail.xml -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="32dp">
+
+        <!-- Drag handle -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="@color/border_muted" />
+
+        <!-- Header: name + role badge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:gap="10dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reyes"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_lg"
+                    android:fontFamily="@font/exo2_medium" />
+
+                <TextView
+                    android:id="@+id/tv_detail_role_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Combat specialist. Best used in battle squads."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_xs" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_detail_role_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Soldier"
+                style="@style/RoleBadge"
+                android:textColor="@color/teal_300" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:background="@color/border_default" />
+
+        <!-- Stats section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stats"
+            style="@style/TextSectionHeader"
+            android:layout_marginBottom="10dp" />
+
+        <!-- HP stat row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:gap="8dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="HP"
+                android:textColor="@color/bar_hp"
+                android:textSize="@dimen/text_body"
+                android:fontFamily="@font/exo2_medium" />
+
+            <ProgressBar
+                android:id="@+id/progress_detail_hp"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="6dp"
+                android:layout_weight="1"
+                android:progressDrawable="@drawable/progress_hp"
+                android:max="100"
+                android:progress="90" />
+
+            <TextView
+                android:id="@+id/tv_detail_hp"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:text="90 / 100"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_xs"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Energy stat row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:gap="8dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Energy"
+                android:textColor="@color/bar_energy"
+                android:textSize="@dimen/text_body"
+                android:fontFamily="@font/exo2_medium" />
+
+            <ProgressBar
+                android:id="@+id/progress_detail_energy"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="6dp"
+                android:layout_weight="1"
+                android:progressDrawable="@drawable/progress_energy"
+                android:max="100"
+                android:progress="70" />
+
+            <TextView
+                android:id="@+id/tv_detail_energy"
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:text="70 / 100"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_xs"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Attack stat (soldiers only, also GONE for non combat roles) -->
+        <LinearLayout
+            android:id="@+id/layout_detail_attack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:gap="8dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Attack"
+                android:textColor="@color/coral_300"
+                android:textSize="@dimen/text_body"
+                android:fontFamily="@font/exo2_medium" />
+
+            <TextView
+                android:id="@+id/tv_detail_attack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35 dmg"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_body" />
+        </LinearLayout>
+
+        <!-- Crit chance (special soldier only) -->
+        <LinearLayout
+            android:id="@+id/layout_detail_crit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:gap="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Crit"
+                android:textColor="@color/coral_400"
+                android:textSize="@dimen/text_body"
+                android:fontFamily="@font/exo2_medium" />
+
+            <TextView
+                android:id="@+id/tv_detail_crit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25%"
+                android:textColor="@color/coral_300"
+                android:textSize="@dimen/text_body" />
+        </LinearLayout>
+
+        <!-- Current status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:gap="8dp"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_body"
+                android:fontFamily="@font/exo2_medium" />
+
+            <TextView
+                android:id="@+id/tv_detail_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quarters"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_body" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:background="@color/border_default" />
+
+        <!-- Combat warning (GONE for soldiers) -->
+        <LinearLayout
+            android:id="@+id/layout_combat_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_alert_warning"
+            android:padding="10dp"
+            app:gap="8dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="14dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_warning"
+                android:tint="@color/amber_400"
+                tools:ignore="ContentDescription"
+                xmlns:tools="http://schemas.android.com/tools" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crew_combat_warning"
+                android:textColor="@color/amber_300"
+                android:textSize="@dimen/text_xs" />
+        </LinearLayout>
+
+        <!-- Assign to building -->
+        <Button
+            android:id="@+id/btn_assign_building"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_button_height"
+            android:text="@string/crew_assign_building"
+            style="@style/ButtonSecondary" />
+
+    </LinearLayout>
+</ScrollView>

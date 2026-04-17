@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_crew_selectable.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/bg_card"
+    app:cardCornerRadius="@dimen/corner_lg"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/border_default"
+    app:strokeWidth="0.5dp">
+
+    <!-- Root frame allows the selection overlay to sit on top -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Card content (same structure as item_crew_card) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/card_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:gap="8dp">
+
+                <TextView
+                    android:id="@+id/tv_sel_crew_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reyes"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_md"
+                    android:fontFamily="@font/exo2_medium"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/tv_sel_crew_role"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soldier"
+                    style="@style/RoleBadge"
+                    android:textColor="@color/teal_300" />
+
+                <TextView
+                    android:id="@+id/tv_sel_crew_xp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crew_xp_format"
+                    android:textColor="@color/amber_300"
+                    android:textSize="@dimen/text_xs"
+                    android:fontFamily="@font/exo2_medium"
+                    android:layout_marginStart="4dp" />
+
+                <!-- Non combat warning badge (GONE for soldiers) -->
+                <ImageView
+                    android:id="@+id/iv_sel_combat_warning"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_warning"
+                    android:tint="@color/amber_400"
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                app:gap="8dp">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="HP"
+                    android:textColor="@color/bar_hp"
+                    android:textSize="@dimen/text_xs"
+                    android:fontFamily="@font/exo2_medium" />
+
+                <ProgressBar
+                    android:id="@+id/progress_sel_hp"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/stat_bar_height"
+                    android:layout_weight="1"
+                    android:progressDrawable="@drawable/progress_hp"
+                    android:max="100"
+                    android:progress="90" />
+
+                <TextView
+                    android:id="@+id/tv_sel_hp_value"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:text="90/100"
+                    android:textColor="@color/text_hint"
+                    android:textSize="@dimen/text_xs"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                app:gap="8dp">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:text="EN"
+                    android:textColor="@color/bar_energy"
+                    android:textSize="@dimen/text_xs"
+                    android:fontFamily="@font/exo2_medium" />
+
+                <ProgressBar
+                    android:id="@+id/progress_sel_energy"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/stat_bar_height"
+                    android:layout_weight="1"
+                    android:progressDrawable="@drawable/progress_energy"
+                    android:max="100"
+                    android:progress="70" />
+
+                <TextView
+                    android:id="@+id/tv_sel_energy_value"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:text="70/100"
+                    android:textColor="@color/text_hint"
+                    android:textSize="@dimen/text_xs"
+                    android:gravity="end" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Selection overlay. teal tinted, alpha 0 when unselected -->
+        <View
+            android:id="@+id/view_selection_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_900"
+            android:alpha="0"
+            android:clickable="false" />
+
+        <!-- Checkmark shown when selected -->
+        <ImageView
+            android:id="@+id/iv_selected_check"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_check_circle"
+            android:tint="@color/teal_300"
+            android:visibility="invisible"
+            android:contentDescription="Selected" />
+
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

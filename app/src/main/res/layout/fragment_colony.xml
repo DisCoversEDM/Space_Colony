@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fragment_colony.xml -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- Map canvas, buildings positioned absolutely -->
+    <FrameLayout
+        android:id="@+id/layout_colony_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Hospital building icon + overlay -->
+        <FrameLayout
+            android:id="@+id/building_hospital"
+            android:layout_width="@dimen/building_icon_tap_target"
+            android:layout_height="@dimen/building_icon_tap_target"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="80dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/iv_hospital"
+                android:layout_width="@dimen/building_icon_size"
+                android:layout_height="@dimen/building_icon_size"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_building_hospital"
+                android:tint="@color/teal_400"
+                tools:ignore="ContentDescription" />
+
+            <!-- Builder wrench overlay (visibility= GONE when no builder assigned) -->
+            <ImageView
+                android:id="@+id/iv_hospital_wrench"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/ic_wrench"
+                android:tint="@color/amber_400"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <!-- Hospital label + capacity -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="152dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/building_hospital"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_xs"
+                android:fontFamily="@font/exo2_medium" />
+
+            <TextView
+                android:id="@+id/tv_hospital_capacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 / 3"
+                android:textColor="@color/text_hint"
+                android:textSize="@dimen/text_xs" />
+
+            <ProgressBar
+                android:id="@+id/progress_hospital_upgrade"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="72dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
+                android:progressDrawable="@drawable/progress_upgrade"
+                android:max="100"
+                android:progress="0"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Simulator building - Positioned in the middle with a bit more offset down -->
+        <FrameLayout
+            android:id="@+id/building_simulator"
+            android:layout_width="@dimen/building_icon_tap_target"
+            android:layout_height="@dimen/building_icon_tap_target"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="280dp"
+            android:background="?attr/selectableItemBackgroundBorderless">
+
+            <ImageView
+                android:id="@+id/iv_simulator"
+                android:layout_width="@dimen/building_icon_size"
+                android:layout_height="@dimen/building_icon_size"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_building_simulator"
+                android:tint="@color/teal_400"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/iv_simulator_wrench"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/ic_wrench"
+                android:tint="@color/amber_400"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <!-- Simulator label -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="352dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/building_simulator"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_xs"
+                android:fontFamily="@font/exo2_medium" />
+
+            <TextView
+                android:id="@+id/tv_simulator_capacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_hint"
+                android:textSize="@dimen/text_xs" />
+
+            <ProgressBar
+                android:id="@+id/progress_simulator_upgrade"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="72dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="3dp"
+                android:progressDrawable="@drawable/progress_upgrade"
+                android:max="100"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Quarters building -->
+        <FrameLayout
+            android:id="@+id/building_quarters"
+            android:layout_width="@dimen/building_icon_tap_target"
+            android:layout_height="@dimen/building_icon_tap_target"
+            android:layout_gravity="end"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="80dp"
+            android:background="?attr/selectableItemBackgroundBorderless">
+
+            <ImageView
+                android:id="@+id/iv_quarters"
+                android:layout_width="@dimen/building_icon_size"
+                android:layout_height="@dimen/building_icon_size"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_building_quarters"
+                android:tint="@color/teal_400"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/iv_quarters_wrench"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/ic_wrench"
+                android:tint="@color/amber_400"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <!-- Quarters label -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="48dp"
+            android:layout_marginTop="152dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/building_quarters"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_xs"
+                android:fontFamily="@font/exo2_medium" />
+
+            <TextView
+                android:id="@+id/tv_quarters_capacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_hint"
+                android:textSize="@dimen/text_xs" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

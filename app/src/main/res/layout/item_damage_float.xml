@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_damage_float.xml
+     Inflated programmatically by BattleAnimationHelper and added
+     to layout_battle_root as a floating overlay.
+
+     Usage in code:
+         val view = inflater.inflate(R.layout.item_damage_float, battleRoot, false)
+         view.findViewById<TextView>(R.id.tv_damage_number).apply {
+             text = "-42"
+             setTextColor(ContextCompat.getColor(context, R.color.bar_hp))
+         }
+         battleRoot.addView(view)
+         // position view over the target crew card, then animate:
+         view.animate()
+             .translationYBy(-120f)
+             .alpha(0f)
+             .setDuration(900)
+             .withEndAction { battleRoot.removeView(view) }
+             .start()
+
+     For critical hits: increase textSize to 22sp and use coral_400.
+     For healing:       use teal_300 and prefix with "+".
+     made with claude because ts fried me
+-->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_damage_number"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="-42"
+    android:textColor="@color/bar_hp"
+    android:textSize="@dimen/damage_float_text_size"
+    android:fontFamily="@font/exo2_medium"
+    android:alpha="1.0" />

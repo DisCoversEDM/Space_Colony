@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_crew_battle_card.xml
+     Compact crew card displayed in the battle squad row -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_battle_card"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="10dp"
+    android:gravity="center_horizontal"
+    app:gap="5dp">
+
+    <!-- Role color dot -->
+    <View
+        android:id="@+id/view_battle_role_dot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:background="@drawable/bg_status_dot_teal" />
+
+    <!-- Crew name -->
+    <TextView
+        android:id="@+id/tv_battle_crew_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reyes"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_xs"
+        android:fontFamily="@font/exo2_medium"
+        android:gravity="center"
+        android:singleLine="true"
+        android:ellipsize="end" />
+
+    <!-- HP bar -->
+    <ProgressBar
+        android:id="@+id/progress_battle_hp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stat_bar_height"
+        android:progressDrawable="@drawable/progress_hp"
+        android:max="100"
+        android:progress="90" />
+
+    <!-- Energy bar -->
+    <ProgressBar
+        android:id="@+id/progress_battle_energy"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stat_bar_height"
+        android:progressDrawable="@drawable/progress_energy"
+        android:max="100"
+        android:progress="70" />
+
+    <!-- Status badge (e.g: KO when HP = 0) -->
+    <TextView
+        android:id="@+id/tv_battle_status_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Active"
+        android:textColor="@color/teal_300"
+        android:textSize="@dimen/text_xs"
+        android:background="@drawable/bg_role_badge"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:visibility="visible" />
+
+    <!-- Crit pulse ring, visible only on SpecialSoldier, animated in code (🙏 lol) -->
+    <View
+        android:id="@+id/view_crit_ring"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/coral_400"
+        android:visibility="gone" />
+
+</LinearLayout>

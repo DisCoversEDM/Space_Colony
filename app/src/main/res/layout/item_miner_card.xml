@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_miner_card.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/bg_card"
+    app:cardCornerRadius="@dimen/corner_lg"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/border_default"
+    app:strokeWidth="0.5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/card_padding"
+        android:gravity="center_vertical">
+
+        <!-- Spaceship / asteroid icon -->
+        <LinearLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:background="@drawable/bg_role_badge">
+
+            <ImageView
+                android:id="@+id/iv_asteroid_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_asteroid"
+                android:contentDescription="Asteroid mining" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="0dp" />
+
+        <!-- Name + spaceship status + payout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_miner_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vance"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_body"
+                android:fontFamily="@font/exo2_medium" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="3dp" />
+
+            <!-- Spaceship status chip -->
+            <TextView
+                android:id="@+id/tv_spaceship_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/asteroid_unlocked"
+                android:textColor="@color/teal_300"
+                android:textSize="@dimen/text_xs"
+                android:background="@drawable/bg_role_badge"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+
+            <TextView
+                android:id="@+id/tv_last_payout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last payout: ¢ 340"
+                android:textColor="@color/text_hint"
+                android:textSize="@dimen/text_xs" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <!-- Send to mine button (Land) -->
+            <Button
+                android:id="@+id/btn_mine_land"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="@string/miner_mine_land"
+                android:textSize="11sp"
+                style="@style/ButtonPrimary"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <View
+                android:id="@+id/spacer_btns"
+                android:layout_width="0dp"
+                android:layout_height="4dp" />
+
+            <!-- Send to mine button (Asteroid) -->
+            <Button
+                android:id="@+id/btn_mine_asteroid"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="@string/miner_mine_asteroid"
+                android:textSize="11sp"
+                style="@style/ButtonPrimary"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <!-- Stop mining button -->
+            <Button
+                android:id="@+id/btn_stop_mining"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="@string/miner_stop"
+                android:textSize="11sp"
+                style="@style/ButtonPrimary"
+                android:backgroundTint="@color/coral_300"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
