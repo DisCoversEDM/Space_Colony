@@ -79,7 +79,7 @@ public class MissionFragment extends Fragment {
             int threatLevel = (turn / 6) + 1;
             tvThreatName.setText("Vortex Ravager");
             tvThreatLevel.setText("Threat level " + threatLevel);
-            tvThreatDamage.setText("Deals " + (threatLevel * 10) + "–" + (threatLevel * 10 + 15) + " dmg / turn");
+            tvThreatDamage.setText("Deals " + (threatLevel * 7 + 3) + "–" + (threatLevel * 7 + 18) + " dmg / turn");
         } else {
             tvThreatName.setText("Area Secure");
             tvThreatLevel.setText("Next threat scanning...");

@@ -71,7 +71,7 @@ public class BattleActivity extends AppCompatActivity {
         int turn = GameManager.getInstance().getTurn();
         threatLevel = (turn / 6) + 1;
         // Threat(int attack, int defense, double critChance, int critAttackBoost, int maxHP)
-        currentThreat = new Threat(threatLevel * 10, threatLevel * 2, 0.1, 15, threatLevel * 50);
+        currentThreat = new Threat(3 + threatLevel * 7, (int) ((int) threatLevel * 1.5 + 5), 0.1, 15, threatLevel * 50);
 
         tvAlienThreatLevel.setText("Threat " + threatLevel);
         tvAlienCrit.setText("Crit chance: " + (int)(0.1 * 100) + "%");

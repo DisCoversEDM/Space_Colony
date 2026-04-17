@@ -52,16 +52,16 @@ public class StatsFragment extends Fragment implements GameManager.OnCreditsChan
 
     private void updateStats() {
         if (!isAdded()) return;
-        
+
         GameManager gm = GameManager.getInstance();
 
         tvMissions.setText(String.valueOf(gm.getMissionsCompleted()));
-        
-        tvWinLoss.setText(getString(R.string.stats_win_loss_format, 
+
+        tvWinLoss.setText(getString(R.string.stats_win_loss_format,
                 gm.getMissionsWon(), gm.getMissionsLost()));
-        
+
         onCreditsChanged(gm.getTotalCreditsEarned());
-        
+
         tvThreat.setText(getString(R.string.stats_threat_format, gm.getHighestThreatDefeated()));
 
         CrewMember topCrew = gm.getMostUsedCrew();
