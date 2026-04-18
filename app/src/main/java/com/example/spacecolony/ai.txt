@@ -1,5 +1,0 @@
-ChatGPT told me about the ArrayList.stream().anymatch() function which I used in the mission control to check if any crew member is alive because the amount of crew members in a mission is anything from 1 to 3.
-Claude told me that best UI practice is to use one activity and multiple fragments. And for that I'll need to use LinearLayout.
-Claude also told me that I should create a drawable file for custom buttons
-AI helped a lot when coding the xml files since we barely have any experience with it.
-AI helped with EarningsChartView
